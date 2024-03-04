@@ -173,7 +173,7 @@ class DataCollectorBase(IterableDataset, metaclass=abc.ABCMeta):
                 functools.partial(_map_to_device_params, device="meta"),
                 filter_empty=False,
             ).to_module(policy):
-                policy = deepcopy(policy)
+                pass # policy = deepcopy(policy)
 
             param_and_buf.apply(
                 functools.partial(_map_to_device_params, device=self.policy_device),
